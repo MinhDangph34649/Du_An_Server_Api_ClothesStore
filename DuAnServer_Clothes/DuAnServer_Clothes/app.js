@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const exchangeApi = require('./exchangeapi');
 
 const returnRoutes = require('./routes/returnapi');
 const voucherRoutes = require('./routes/voucherapi');
@@ -7,6 +8,7 @@ const voucherDetailRoutes = require('./routes/voucherDetailapi');
 
 const app = express();
 app.use(bodyParser.json());
+app.use(express.json()); 
 
 app.use('/api', returnRoutes);
 app.use('/api', voucherRoutes);
